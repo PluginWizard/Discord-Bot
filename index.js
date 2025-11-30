@@ -10,6 +10,11 @@ const client = new discord.Client({
 
 client.once('ready', () => {
     Logger.info(`Logged in as ${client.user.tag}!`);
+
+    // Set rich presence status
+    client.user.setActivity({
+        name: "Playing PluginWizard"
+    });
 });
 
 client.login(TOKEN).catch(err => {
